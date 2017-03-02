@@ -1,10 +1,9 @@
 " File:       monokai.vim
-" Maintainer: Crusoe Xia (crusoexia)
-" URL:        https://github.com/crusoexia/vim-monokai
+" Maintainer: Johannes Bausch (rumschuettel)
+" URL:        https://github.com/rumschuettel/vim-monokai
 " License:    MIT
 "
-" The colour palette is from http://www.colourlovers.com/
-" The original code is from https://github.com/w0ng/vim-hybrid
+" The original code is from https://github.com/crusoexia/vim-hybrid
 
 " Initialisation
 " --------------
@@ -71,6 +70,7 @@ endfunction
 
 
 let s:white       = { "gui": "#E8E8E3", "cterm": "252" }
+let s:brightwhite = { "gui": "#FFFFFF", "cterm": "15" }
 let s:black       = { "gui": "#272822", "cterm": "234" }
 let s:lightblack  = { "gui": "#2D2E27", "cterm": "235" }
 let s:lightblack2 = { "gui": "#383a3e", "cterm": "236" }
@@ -82,10 +82,11 @@ let s:warmgrey    = { "gui": "#75715E", "cterm": "59" }
 
 let s:pink        = { "gui": "#F92772", "cterm": "197" }
 let s:green       = { "gui": "#A6E22D", "cterm": "148" }
+let s:darkgreen   = { "gui": "#5faf00", "cterm": "70" }
 let s:aqua        = { "gui": "#66d9ef", "cterm": "81" }
+let s:darkblue    = { "gui": "#0087df", "cterm": "32" }
 let s:yellow      = { "gui": "#E6DB74", "cterm": "186" }
 let s:orange      = { "gui": "#FD9720", "cterm": "208" }
-let s:purple      = { "gui": "#ae81ff", "cterm": "141" }
 let s:red         = { "gui": "#e73c50", "cterm": "196" }
 let s:darkred     = { "gui": "#5f0000", "cterm": "52" }
 
@@ -109,7 +110,7 @@ call s:h("StatusLineNC",  { "fg": s:darkgrey,   "bg": s:warmgrey,     "format": 
 call s:h("TabLine",       { "fg": s:white,      "bg": s:darkblack,    "format": "reverse" })
 call s:h("Visual",        {                     "bg": s:lightgrey })
 call s:h("Search",        { "fg": s:black,      "bg": s:yellow })
-call s:h("MatchParen",    { "fg": s:black,      "bg": s:purple })
+call s:h("MatchParen",    { "fg": s:black,      "bg": s:darkblue })
 call s:h("Question",      { "fg": s:yellow })
 call s:h("ModeMsg",       { "fg": s:yellow })
 call s:h("MoreMsg",       { "fg": s:yellow })
@@ -145,36 +146,36 @@ call s:h("PmenuThumb",    { "fg": s:lightblack, "bg": s:grey })
 " Generic Syntax Highlighting
 " ---------------------------
 
-call s:h("Constant",      { "fg": s:purple })
-call s:h("Number",        { "fg": s:purple })
-call s:h("Float",         { "fg": s:purple })
-call s:h("Boolean",       { "fg": s:purple })
+call s:h("Constant",      { "fg": s:yellow })
+call s:h("Number",        { "fg": s:yellow })
+call s:h("Float",         { "fg": s:yellow })
+call s:h("Boolean",       { "fg": s:yellow, "format": "bold" })
 call s:h("Character",     { "fg": s:yellow })
 call s:h("String",        { "fg": s:yellow })
 
-call s:h("Type",          { "fg": s:aqua })
-call s:h("Structure",     { "fg": s:aqua })
-call s:h("StorageClass",  { "fg": s:aqua })
-call s:h("Typedef",       { "fg": s:aqua })
+call s:h("Type",          { "fg": s:darkblue })
+call s:h("Structure",     { "fg": s:darkblue })
+call s:h("StorageClass",  { "fg": s:darkblue })
+call s:h("Typedef",       { "fg": s:darkblue })
     
 call s:h("Identifier",    { "fg": s:green })
 call s:h("Function",      { "fg": s:green })
                          
 call s:h("Statement",     { "fg": s:pink })
-call s:h("Operator",      { "fg": s:pink })
+call s:h("Operator",      { "fg": s:aqua })
 call s:h("Label",         { "fg": s:pink })
-call s:h("Keyword",       { "fg": s:aqua })
+call s:h("Keyword",       { "fg": s:brightwhite })
 "        Conditional"
 "        Repeat"
 "        Exception"
 
-call s:h("PreProc",       { "fg": s:green })
+call s:h("PreProc",       { "fg": s:pink })
 call s:h("Include",       { "fg": s:pink })
 call s:h("Define",        { "fg": s:pink })
-call s:h("Macro",         { "fg": s:green })
-call s:h("PreCondit",     { "fg": s:green })
+call s:h("Macro",         { "fg": s:pink })
+call s:h("PreCondit",     { "fg": s:darkgreen })
                            
-call s:h("Special",       { "fg": s:purple })
+call s:h("Special",       { "fg": s:darkblue })
 call s:h("SpecialChar",   { "fg": s:pink })
 call s:h("Delimiter",     { "fg": s:pink })
 call s:h("SpecialComment",{ "fg": s:aqua })
@@ -228,7 +229,7 @@ call s:h("jsBuiltins",          { "fg": s:aqua })
 call s:h("jsArgsObj",           { "fg": s:aqua })
 call s:h("jsStatic",            { "fg": s:aqua })
 call s:h("jsSuper",             { "fg": s:aqua })
-call s:h("jsFuncArgRest",       { "fg": s:purple, "format": "italic" })                                 
+call s:h("jsFuncArgRest",       { "fg": s:darkblue, "format": "italic" })                                 
 call s:h("jsFuncArgs",          { "fg": s:orange, "format": "italic" })
 call s:h("jsStorageClass",      { "fg": s:aqua })
 call s:h("jsDocTags",           { "fg": s:aqua,   "format": "italic" })
@@ -238,7 +239,7 @@ call s:h("htmlTag",             { "fg": s:white })
 call s:h("htmlEndTag",          { "fg": s:white })
 call s:h("htmlTagName",         { "fg": s:pink })
 call s:h("htmlArg",             { "fg": s:green })
-call s:h("htmlSpecialChar",     { "fg": s:purple })
+call s:h("htmlSpecialChar",     { "fg": s:darkblue })
 
 " Xml
 call s:h("xmlTag",              { "fg": s:pink })
@@ -250,10 +251,10 @@ call s:h("xmlAttrib",           { "fg": s:green })
 call s:h("cssProp",             { "fg": s:yellow })
 call s:h("cssUIAttr",           { "fg": s:yellow })
 call s:h("cssFunctionName",     { "fg": s:aqua })
-call s:h("cssColor",            { "fg": s:purple })
-call s:h("cssPseudoClassId",    { "fg": s:purple })
+call s:h("cssColor",            { "fg": s:darkblue })
+call s:h("cssPseudoClassId",    { "fg": s:darkblue })
 call s:h("cssClassName",        { "fg": s:green })
-call s:h("cssValueLength",      { "fg": s:purple })
+call s:h("cssValueLength",      { "fg": s:darkblue })
 call s:h("cssCommonAttr",       { "fg": s:pink })
 call s:h("cssBraces" ,          { "fg": s:white })
 call s:h("cssClassNameDot",     { "fg": s:pink })
@@ -272,8 +273,8 @@ call s:h("rubyFunction",                { "fg": s:green })
 call s:h("rubyStringDelimiter",         { "fg": s:yellow })
 call s:h("rubyRegexp",                  { "fg": s:yellow })
 call s:h("rubyRegexpDelimiter",         { "fg": s:yellow })
-call s:h("rubySymbol",                  { "fg": s:purple })
-call s:h("rubyEscape",                  { "fg": s:purple })
+call s:h("rubySymbol",                  { "fg": s:darkblue })
+call s:h("rubyEscape",                  { "fg": s:darkblue })
 call s:h("rubyInclude",                 { "fg": s:pink })
 call s:h("rubyOperator",                { "fg": s:pink })
 call s:h("rubyControl",                 { "fg": s:pink })
