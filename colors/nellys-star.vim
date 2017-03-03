@@ -1,9 +1,9 @@
-" File:       monokai.vim
+" File:       nellys-star.vim
 " Maintainer: Johannes Bausch (rumschuettel)
-" URL:        https://github.com/rumschuettel/vim-monokai
+" URL:        https://github.com/rumschuettel/vim-nellys-star
 " License:    MIT
 "
-" The original code is from https://github.com/crusoexia/vim-hybrid
+" The original code is from https://github.com/crusoexia/vim-monokai
 
 " Initialisation
 " --------------
@@ -12,15 +12,15 @@ if !has("gui_running") && &t_Co < 256
   finish
 endif
 
-if ! exists("g:monokai_gui_italic")
-    let g:monokai_gui_italic = 1
+if ! exists("g:nellys_star_gui_italic")
+    let g:nellys_star_gui_italic = 1
 endif
 
-if ! exists("g:monokai_term_italic")
-    let g:monokai_term_italic = 0
+if ! exists("g:nellys_star_term_italic")
+    let g:nellys_star_term_italic = 0
 endif
 
-let g:monokai_termcolors = 256 " does not support 16 color term right now.
+let g:nellys_star_termcolors = 256 " does not support 16 color term right now.
 
 set background=dark
 hi clear
@@ -29,7 +29,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "monokai"
+let colors_name = "nellysstar"
 
 function! s:h(group, style)
   let s:ctermformat = "NONE"
@@ -38,17 +38,17 @@ function! s:h(group, style)
     let s:ctermformat = a:style.format
     let s:guiformat = a:style.format
   endif
-  if g:monokai_term_italic == 0
+  if g:nellys_star_term_italic == 0
     let s:ctermformat = substitute(s:ctermformat, ",italic", "", "")
     let s:ctermformat = substitute(s:ctermformat, "italic,", "", "")
     let s:ctermformat = substitute(s:ctermformat, "italic", "", "")
   endif
-  if g:monokai_gui_italic == 0
+  if g:nellys_star_gui_italic == 0
     let s:guiformat = substitute(s:guiformat, ",italic", "", "")
     let s:guiformat = substitute(s:guiformat, "italic,", "", "")
     let s:guiformat = substitute(s:guiformat, "italic", "", "")
   endif
-  if g:monokai_termcolors == 16
+  if g:nellys_star_termcolors == 16
     let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
     let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm16 : "NONE")
   else
